@@ -296,12 +296,12 @@ echo "  ~/stop_mock_arm.sh"
 ```
 1.一件啟動的指令:
 ```shell
-bash ~/start_mock_arm.sh
+bash ~/arm_comm_lab/start_mock_arm.sh
 ```
 2.驗證（新終端機）
 ```shell
 source /opt/ros/jazzy/setup.bash
-ros2 topic echo /joint_states
+ros2 topic echo /arm/comm_status std_msgs/msg/String
 ```
 3.發命令（新終端機）
 ```shell
@@ -310,7 +310,7 @@ ros2 topic pub --once /arm/joint_cmd std_msgs/msg/Float64MultiArray "{data: [0.5
 ```
 4.一鍵停止
 ```shell
-bash ~/stop_mock_arm.sh
+bash ~/arm_comm_lab/stop_mock_arm.sh
 ```
 
 
